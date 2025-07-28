@@ -1,4 +1,4 @@
-package com.bookstore.jpa.models;
+package com.bookstore.jpa.model;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tb_book")
-public class BookModel implements Serializable {
+public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -19,7 +19,7 @@ public class BookModel implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id")
-    private PublisherModel publisher;
+    private Publisher publisher;
 
     public UUID getId() {
         return id;
@@ -37,11 +37,11 @@ public class BookModel implements Serializable {
         this.title = title;
     }
 
-    public PublisherModel getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(PublisherModel publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 }

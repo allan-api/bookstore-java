@@ -1,4 +1,4 @@
-package com.bookstore.jpa.models;
+package com.bookstore.jpa.model;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tb_author")
-public class AuthorModel implements Serializable {
+public class Author implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
